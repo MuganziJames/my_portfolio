@@ -6,8 +6,7 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Crimson Text", "Times New Roman", Georgia, serif;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   overflow-x: hidden;
@@ -16,11 +15,33 @@ body {
 /* Hero Section */
 .hero-section {
   height: 100vh;
-  background-color: var(--color-bg-primary);
+  background-image: url("./images/blackboard-1846865.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
   display: flex;
   align-items: center;
   padding: 0 80px;
+}
+
+/* Add overlay for better text readability */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.hero-content,
+.navigation {
+  position: relative;
+  z-index: 2;
 }
 
 /* Navigation */
@@ -43,26 +64,33 @@ body {
 .nav-item {
   color: var(--color-text-primary);
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   transition: color var(--transition-normal);
   position: relative;
+  border: none;
+  background: none;
+  outline: none;
 }
 
 .nav-item:hover,
 .nav-item.active {
-  color: var(--color-accent-bronze);
+  color: var(--color-accent-gray);
 }
 
 .resume-btn {
   color: var(--color-text-primary);
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  padding: 12px 24px;
-  border: 1px solid var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border: 2px solid var(--color-text-primary);
   border-radius: 4px;
   transition: all var(--transition-normal);
 }
@@ -79,26 +107,35 @@ body {
 }
 
 .intro-text {
-  font-size: 16px;
-  font-weight: 300;
-  color: var(--color-text-accent);
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 1;
 }
 
 .name {
-  font-size: clamp(40px, 8vw, 80px);
+  font-family: "Crimson Text", serif;
+  font-size: clamp(64px, 10vw, 140px);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1;
   color: var(--color-text-primary);
   position: relative;
   display: inline-block;
   cursor: pointer;
   transition: color var(--transition-normal);
+  text-decoration: underline;
+  text-decoration-color: var(--color-text-primary);
+  text-underline-offset: 16px;
+  text-decoration-thickness: 3px;
 }
 
 .name:hover {
-  color: var(--color-text-secondary);
+  color: var(--color-accent-gray);
+  text-decoration-color: var(--color-accent-gray);
 }
 
 /* Hover Card */
@@ -110,8 +147,8 @@ body {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border-light);
   border-radius: 8px;
-  padding: 24px;
-  width: 400px;
+  padding: 28px;
+  width: 480px;
   max-width: 90vw;
   opacity: 0;
   visibility: hidden;
@@ -128,7 +165,7 @@ body {
 }
 
 .hover-card p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-text-primary);
@@ -151,26 +188,26 @@ body {
   }
 
   .nav-item {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .resume-btn {
-    font-size: 13px;
-    padding: 10px 20px;
+    font-size: 15px;
+    padding: 14px 28px;
   }
 
   .intro-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .hover-card {
-    width: 320px;
-    padding: 20px;
+    width: 380px;
+    padding: 24px;
     margin-top: 20px;
   }
 
   .hover-card p {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -189,45 +226,29 @@ body {
   }
 
   .nav-item {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .resume-btn {
-    font-size: 12px;
-    padding: 8px 16px;
+    font-size: 14px;
+    padding: 12px 24px;
   }
 
   .intro-text {
-    font-size: 13px;
-    margin-bottom: 15px;
+    font-size: 15px;
+    margin-bottom: 20px;
   }
 
   .hover-card {
-    width: 280px;
-    padding: 16px;
+    width: 320px;
+    padding: 20px;
     margin-top: 15px;
   }
 
   .hover-card p {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.5;
   }
-}
-
-/* Additional editorial styling touches */
-.name::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-accent-bronze);
-  transition: width var(--transition-normal);
-}
-
-.name:hover::after {
-  width: 100%;
 }
 
 /* Subtle animations */

@@ -5,15 +5,15 @@
   --color-primary-white: #ffffff;
 
   /* Accent Colors */
-  --color-accent-bronze: #b08d57;
-  --color-accent-bronze-hover: #c19b66;
-  --color-accent-bronze-light: rgba(176, 141, 87, 0.1);
+  --color-accent-gray: #64ffda;
+  --color-accent-gray-hover: #4db6ac;
+  --color-accent-gray-light: rgba(100, 255, 218, 0.1);
 
   /* Text Colors */
   --color-text-primary: #ffffff;
   --color-text-secondary: #f0f0f0;
   --color-text-muted: #cccccc;
-  --color-text-accent: #b08d57;
+  --color-text-accent: #64ffda;
 
   /* Background Colors */
   --color-bg-primary: #000000;
@@ -24,16 +24,16 @@
   /* Border Colors */
   --color-border-light: #333333;
   --color-border-medium: #666666;
-  --color-border-accent: #b08d57;
+  --color-border-accent: #64ffda;
 
   /* Interactive States */
   --color-hover-light: #f0f0f0;
-  --color-active-accent: #b08d57;
-  --color-focus-outline: #b08d57;
+  --color-active-accent: #64ffda;
+  --color-focus-outline: #64ffda;
 
   /* Shadows */
-  --shadow-accent: 0 8px 32px rgba(176, 141, 87, 0.1);
-  --shadow-accent-strong: 0 8px 32px rgba(176, 141, 87, 0.3);
+  --shadow-accent: 0 8px 32px rgba(100, 255, 218, 0.1);
+  --shadow-accent-strong: 0 8px 32px rgba(100, 255, 218, 0.3);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
