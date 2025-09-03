@@ -1,0 +1,60 @@
+/* Theme Colors */
+:root {
+  /* Primary Colors */
+  --color-primary-black: #000000;
+  --color-primary-white: #ffffff;
+
+  /* Accent Colors */
+  --color-accent-bronze: #b08d57;
+  --color-accent-bronze-hover: #c19b66;
+  --color-accent-bronze-light: rgba(176, 141, 87, 0.1);
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #f0f0f0;
+  --color-text-muted: #cccccc;
+  --color-text-accent: #b08d57;
+
+  /* Background Colors */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #111111;
+  --color-bg-card: #000000;
+  --color-bg-overlay: rgba(0, 0, 0, 0.9);
+
+  /* Border Colors */
+  --color-border-light: #333333;
+  --color-border-medium: #666666;
+  --color-border-accent: #b08d57;
+
+  /* Interactive States */
+  --color-hover-light: #f0f0f0;
+  --color-active-accent: #b08d57;
+  --color-focus-outline: #b08d57;
+
+  /* Shadows */
+  --shadow-accent: 0 8px 32px rgba(176, 141, 87, 0.1);
+  --shadow-accent-strong: 0 8px 32px rgba(176, 141, 87, 0.3);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-Index */
+  --z-index-dropdown: 100;
+  --z-index-navigation: 1000;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --color-primary-black: #ffffff;
+  --color-primary-white: #000000;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-card: #ffffff;
+  --color-border-light: #e1e5e9;
+  --color-border-medium: #ced4da;
+}

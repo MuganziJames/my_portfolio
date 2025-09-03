@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>James Muganzi - Portfolio</title>
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero-section">
+      <!-- Navigation -->
+      <nav class="navigation">
+        <div class="nav-items">
+          <a href="#about" class="nav-item active">01. About</a>
+          <a href="#experience" class="nav-item">02. Experience</a>
+          <a href="#work" class="nav-item">03. Work</a>
+          <a href="#contact" class="nav-item">04. Contact</a>
+          <a href="#resume" class="resume-btn">Resume</a>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="intro-text">Hi, my name is</div>
+        <h1 class="name" id="nameElement">
+          Muganzi James
+          <div class="hover-card" id="hoverCard">
+            <p>I'm a software engineer building digital experiences.</p>
+          </div>
+        </h1>
+      </div>
+    </div>
+
+    <script>
+      // Navigation active state
+      const navItems = document.querySelectorAll(".nav-item");
+      navItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          navItems.forEach((nav) => nav.classList.remove("active"));
+          item.classList.add("active");
+        });
+      });
+
+      // Hover card functionality
+      const nameElement = document.getElementById("nameElement");
+      const hoverCard = document.getElementById("hoverCard");
+
+      nameElement.addEventListener("mouseenter", () => {
+        hoverCard.classList.add("visible");
+      });
+
+      nameElement.addEventListener("mouseleave", () => {
+        hoverCard.classList.remove("visible");
+      });
+    </script>
+  </body>
+</html>
