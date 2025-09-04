@@ -6,6 +6,7 @@
     <title>James Muganzi - Portfolio</title>
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,15 +19,47 @@
     />
   </head>
   <body>
-    <div class="hero-section">
+    <div class="hero-section" id="hero">
       <!-- Navigation -->
-      <nav class="navigation">
-        <div class="nav-items">
-          <a href="#about" class="nav-item active">01. About</a>
-          <a href="#experience" class="nav-item">02. Experience</a>
-          <a href="#work" class="nav-item">03. Work</a>
-          <a href="#contact" class="nav-item">04. Contact</a>
-          <a href="#resume" class="resume-btn">Resume</a>
+      <nav class="navigation" id="navigation">
+        <div class="nav-logo">
+          <a href="#hero" class="logo-name" onclick="scrollToHero()">James</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-items" id="navItems">
+          <a
+            href="#about"
+            class="nav-item"
+            onclick="scrollToSection('about'); closeMenu()"
+            >01. About</a
+          >
+          <a
+            href="#experience"
+            class="nav-item"
+            onclick="scrollToSection('experience'); closeMenu()"
+            >02. Experience</a
+          >
+          <a
+            href="#work"
+            class="nav-item"
+            onclick="scrollToSection('work'); closeMenu()"
+            >03. Work</a
+          >
+          <a
+            href="#contact"
+            class="nav-item"
+            onclick="scrollToSection('contact'); closeMenu()"
+            >04. Contact</a
+          >
+          <a href="#resume" class="resume-btn" onclick="closeMenu()">Resume</a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </nav>
 
@@ -45,28 +78,74 @@
       </div>
     </div>
 
-    <script>
-      // Navigation active state
-      const navItems = document.querySelectorAll(".nav-item");
-      navItems.forEach((item) => {
-        item.addEventListener("click", (e) => {
-          e.preventDefault();
-          navItems.forEach((nav) => nav.classList.remove("active"));
-          item.classList.add("active");
-        });
-      });
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <!-- About Header -->
+        <div class="about-header">
+          <h2 class="section-title">ABOUT ME</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">
+            Here you'll find a glimpse into who I am, what drives me, and the
+            skills I bring into building intelligent, data-driven solutions.
+          </p>
+        </div>
 
-      // Hover card functionality
-      const nameElement = document.getElementById("nameElement");
-      const hoverCard = document.getElementById("hoverCard");
+        <!-- About Content -->
+        <div class="about-content">
+          <!-- About Text -->
+          <div class="about-text">
+            <h3 class="about-heading">Get to know me!</h3>
+            <div class="about-paragraphs">
+              <p>
+                I'm a <strong>Python Developer and Data Scientist</strong> in
+                training who loves turning complex data into clear insights and
+                building AI-powered tools that make a difference. What excites
+                me most is using technology not just for efficiency, but for
+                impact — solving problems around climate, health, and
+                sustainable development.
+              </p>
+              <p>
+                Over the past year, I've worked on projects like an AI system
+                that predicts climate risks, a nutrition planning platform for
+                families in East Africa, and smart bots that connect people with
+                jobs and resources. Each project taught me how powerful it is to
+                combine code, creativity, and community needs.
+              </p>
+              <p>
+                I'm eager to connect with opportunities where I can push
+                boundaries, collaborate, and keep learning. If you're looking
+                for someone passionate about Python, data, and AI with purpose,
+                let's build something impactful together.
+              </p>
+            </div>
+          </div>
 
-      nameElement.addEventListener("mouseenter", () => {
-        hoverCard.classList.add("visible");
-      });
-
-      nameElement.addEventListener("mouseleave", () => {
-        hoverCard.classList.remove("visible");
-      });
-    </script>
+          <!-- Skills -->
+          <div class="about-skills">
+            <h3 class="skills-heading">My Skills</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Data Science</span>
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Deep Learning</span>
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Streamlit</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">Data Visualization</span>
+              <span class="skill-tag">Git/GitHub</span>
+              <span class="skill-tag">Cloud Basics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
