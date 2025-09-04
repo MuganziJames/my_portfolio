@@ -96,8 +96,10 @@ body {
 }
 
 .resume-btn:hover {
-  background-color: var(--color-text-primary);
-  color: var(--color-bg-primary);
+  background-color: var(--color-accent-gray);
+  color: #222;
+  box-shadow: 0 4px 24px rgba(100, 255, 218, 0.25);
+  border-color: var(--color-accent-gray);
 }
 
 /* Hero Content */

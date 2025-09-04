@@ -1,7 +1,7 @@
 /* Theme Colors */
 :root {
   /* Primary Colors */
-  --color-primary-black: #000000;
+  --color-primary-black: #0a192f;
   --color-primary-white: #ffffff;
 
   /* Accent Colors */
@@ -16,14 +16,14 @@
   --color-text-accent: #64ffda;
 
   /* Background Colors */
-  --color-bg-primary: #000000;
-  --color-bg-secondary: #111111;
-  --color-bg-card: #000000;
-  --color-bg-overlay: rgba(0, 0, 0, 0.9);
+  --color-bg-primary: #0a192f;
+  --color-bg-secondary: #112240;
+  --color-bg-card: #0a192f;
+  --color-bg-overlay: rgba(10, 25, 47, 0.9);
 
   /* Border Colors */
-  --color-border-light: #333333;
-  --color-border-medium: #666666;
+  --color-border-light: #233554;
+  --color-border-medium: #495670;
   --color-border-accent: #64ffda;
 
   /* Interactive States */
