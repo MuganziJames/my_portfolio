@@ -88,6 +88,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // Bio card is now permanently visible
   // Removed hover functionality as the card displays automatically
 
+  // Smooth scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with scroll animation classes
+  const animateElements = document.querySelectorAll(
+    ".scroll-animate, .scroll-animate-left, .scroll-animate-right"
+  );
+
+  animateElements.forEach((el) => {
+    observer.observe(el);
+  });
+
   // Close mobile menu when clicking outside
   document.addEventListener("click", function (event) {
     if (
