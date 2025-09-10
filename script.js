@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Update active navigation items
-    const sections = ["hero", "about", "experience", "work", "contact"];
+    const sections = ["hero", "about", "experience", "projects", "contact"];
     const currentScrollPosition = scrollPosition + 150;
 
     sections.forEach((sectionId) => {
