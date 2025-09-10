@@ -512,13 +512,13 @@ body {
 }
 
 .about-paragraphs strong {
-  color: var(--color-text-primary);
+  color: var(--color-accent-gray);
   font-weight: 600;
   transition: all var(--transition-normal);
 }
 
 .about-paragraphs strong:hover {
-  color: var(--color-accent-gray);
+  color: var(--color-accent-gray-hover);
 }
 
 /* Skills Section */
