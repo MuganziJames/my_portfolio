@@ -17,6 +17,154 @@ body {
   transition: all var(--transition-normal);
 }
 
+/* Loader Styles */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-primary);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+.loader-container.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.loader-progress {
+  width: 300px;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-border-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-gray),
+    var(--color-accent-gray-hover)
+  );
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s ease-out;
+}
+
+.progress-text {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-accent-gray);
+  letter-spacing: 1px;
+}
+
+.loader-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(100, 255, 218, 0.03) 0%,
+    transparent 50%
+  );
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Loader Animations */
+@keyframes slideInName {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.1;
+  }
+}
+
+/* Hide main content during loading */
+body.loading .hero-section,
+body.loading .about-section {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Smooth transition when loader finishes */
+.hero-section,
+.about-section {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-out, visibility 1.2s ease-out;
+}
+
+body:not(.loading) .hero-section,
+body:not(.loading) .about-section {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Loader Responsive Design */
+@media (max-width: 768px) {
+  .loader-greeting {
+    font-size: 16px;
+  }
+
+  .loader-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .loader-progress {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-greeting {
+    font-size: 14px;
+  }
+
+  .loader-subtitle {
+    font-size: 13px;
+  }
+
+  .loader-progress {
+    width: 200px;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   height: 100vh;
@@ -240,7 +388,7 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: var(--z-index-dropdown);
-  animation: fadeInUp 1.2s ease-out 0.8s both;
+  animation: none;
   position: relative;
   overflow: hidden;
 }
@@ -437,13 +585,17 @@ body {
   transform: translateX(0);
 }
 
-/* Hero animations (keep existing) */
-.hero-content {
+/* Hero animations - only when not loading */
+body:not(.loading) .hero-content {
   animation: fadeInUp 0.8s ease-out;
 }
 
-.navigation {
+body:not(.loading) .navigation {
   animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+body:not(.loading) .hover-card {
+  animation: fadeInUp 1.2s ease-out 0.8s both;
 }
 
 /* About Section */

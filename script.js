@@ -1,5 +1,59 @@
+// Loader functionality
+let loaderProgress = 0;
+let loader, progressFill, progressText;
+let loaderStarted = false; // Prevent double loading
+
+function updateProgress() {
+  if (progressFill && progressText && loaderProgress < 100) {
+    loaderProgress += 1;
+    progressFill.style.width = loaderProgress + "%";
+    progressText.textContent = Math.floor(loaderProgress) + "%";
+
+    if (loaderProgress < 100) {
+      setTimeout(updateProgress, 50); // 50ms intervals = 5 seconds total
+    } else {
+      setTimeout(hideLoader, 800); // Brief pause at 100%
+    }
+  }
+}
+
+function hideLoader() {
+  if (loader && !loader.classList.contains("fade-out")) {
+    loader.classList.add("fade-out");
+
+    setTimeout(() => {
+      document.body.classList.remove("loading");
+    }, 400);
+
+    setTimeout(() => {
+      if (loader) {
+        loader.style.display = "none";
+      }
+    }, 800);
+  }
+}
+
+function startLoader() {
+  if (!loaderStarted && progressFill && progressText) {
+    loaderStarted = true;
+    progressFill.style.width = "0%";
+    progressText.textContent = "0%";
+    setTimeout(updateProgress, 500); // Brief delay then start
+  }
+}
+
+// Initialize loader
+document.body.classList.add("loading");
+
 // Navigation and scroll functionality
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize loader elements
+  loader = document.getElementById("loader");
+  progressFill = document.getElementById("progressFill");
+  progressText = document.getElementById("progressText");
+
+  // Start loader
+  startLoader();
   const navigation = document.getElementById("navigation");
   const navItems = document.querySelectorAll(".nav-item");
   const hamburger = document.getElementById("hamburger");
