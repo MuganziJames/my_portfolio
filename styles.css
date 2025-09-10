@@ -214,35 +214,31 @@ body {
   font-size: clamp(64px, 10vw, 140px);
   font-weight: 700;
   line-height: 1;
-  color: var(--color-text-primary);
+  color: var(--color-accent-gray);
   position: relative;
   display: inline-block;
   cursor: pointer;
   transition: color var(--transition-normal);
 }
 
-.name:hover {
-  color: var(--color-accent-gray);
-}
-
-/* Bio Card - Now permanently visible with theme colors */
+/* Bio Card - Now permanently visible with enhanced styling */
 .hover-card {
   position: absolute;
   top: 100%;
   left: 0;
   margin-top: 30px;
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-light);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-accent);
   border-radius: 12px;
   padding: 28px 32px;
   width: clamp(480px, 95%, 800px);
   max-width: 90vw;
-  opacity: 0.95;
+  opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(-3px);
   transition: all var(--transition-normal);
   backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-accent);
+  box-shadow: var(--shadow-accent-strong);
   z-index: var(--z-index-dropdown);
   animation: fadeInUp 1.2s ease-out 0.8s both;
   position: relative;
@@ -262,37 +258,21 @@ body {
     transparent,
     var(--color-accent-gray-light)
   );
-  opacity: 0.3;
-  transition: opacity var(--transition-normal);
-}
-
-.hover-card:hover {
-  opacity: 1;
-  background-color: var(--color-bg-card);
-  border-color: var(--color-border-accent);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-accent-strong);
-}
-
-.hover-card:hover::after {
   opacity: 0.5;
+  transition: opacity var(--transition-normal);
 }
 
 .hover-card p {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.65;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   margin: 0;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.3px;
   transition: color var(--transition-normal);
   position: relative;
   z-index: 2;
-}
-
-.hover-card:hover p {
-  color: var(--color-text-primary);
 }
 
 /* Responsive Design */
