@@ -214,49 +214,80 @@ body {
   display: inline-block;
   cursor: pointer;
   transition: color var(--transition-normal);
-  text-decoration: underline;
-  text-decoration-color: var(--color-text-primary);
-  text-underline-offset: 16px;
-  text-decoration-thickness: 3px;
 }
 
 .name:hover {
   color: var(--color-accent-gray);
-  text-decoration-color: var(--color-accent-gray);
 }
 
-/* Hover Card */
+/* Bio Card - Now permanently visible with theme colors */
 .hover-card {
   position: absolute;
   top: 100%;
   left: 0;
   margin-top: 30px;
-  background-color: var(--color-bg-card);
+  background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border-light);
-  border-radius: 8px;
-  padding: 32px;
-  width: 520px;
+  border-radius: 12px;
+  padding: 28px 32px;
+  width: clamp(480px, 95%, 800px);
   max-width: 90vw;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all var(--transition-normal);
-  box-shadow: var(--shadow-accent);
-  z-index: var(--z-index-dropdown);
-}
-
-.hover-card.visible {
-  opacity: 1;
+  opacity: 0.95;
   visibility: visible;
   transform: translateY(0);
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-accent);
+  z-index: var(--z-index-dropdown);
+  animation: fadeInUp 1.2s ease-out 0.8s both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle background pattern */
+.hover-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-gray-light)
+  );
+  opacity: 0.3;
+  transition: opacity var(--transition-normal);
+}
+
+.hover-card:hover {
+  opacity: 1;
+  background-color: var(--color-bg-card);
+  border-color: var(--color-border-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-accent-strong);
+}
+
+.hover-card:hover::after {
+  opacity: 0.5;
 }
 
 .hover-card p {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.6;
-  color: var(--color-text-primary);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
   margin: 0;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.3px;
+  transition: color var(--transition-normal);
+  position: relative;
+  z-index: 2;
+}
+
+.hover-card:hover p {
+  color: var(--color-text-primary);
 }
 
 /* Responsive Design */
@@ -288,13 +319,15 @@ body {
   }
 
   .hover-card {
-    width: 420px;
-    padding: 28px;
-    margin-top: 20px;
+    width: clamp(380px, 85%, 600px);
+    padding: 24px 28px;
+    margin-top: 25px;
+    opacity: 0.9;
   }
 
   .hover-card p {
     font-size: 16px;
+    line-height: 1.6;
   }
 }
 
@@ -327,14 +360,15 @@ body {
   }
 
   .hover-card {
-    width: 360px;
-    padding: 24px;
-    margin-top: 15px;
+    width: clamp(300px, 90%, 400px);
+    padding: 20px 24px;
+    margin-top: 20px;
+    opacity: 0.9;
   }
 
   .hover-card p {
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 }
 

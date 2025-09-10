@@ -85,19 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Hover card functionality
-  const nameElement = document.getElementById("nameElement");
-  const hoverCard = document.getElementById("hoverCard");
-
-  if (nameElement && hoverCard) {
-    nameElement.addEventListener("mouseenter", () => {
-      hoverCard.classList.add("visible");
-    });
-
-    nameElement.addEventListener("mouseleave", () => {
-      hoverCard.classList.remove("visible");
-    });
-  }
+  // Bio card is now permanently visible
+  // Removed hover functionality as the card displays automatically
 
   // Close mobile menu when clicking outside
   document.addEventListener("click", function (event) {
