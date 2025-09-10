@@ -238,29 +238,14 @@ body {
   transform: translateY(-3px);
   transition: all var(--transition-normal);
   backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-accent-strong);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: var(--z-index-dropdown);
   animation: fadeInUp 1.2s ease-out 0.8s both;
   position: relative;
   overflow: hidden;
 }
 
-/* Add subtle background pattern */
-.hover-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60px;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-accent-gray-light)
-  );
-  opacity: 0.5;
-  transition: opacity var(--transition-normal);
-}
+/* Background gradient removed - keeping only the accent border */
 
 .hover-card p {
   font-size: 17px;
