@@ -245,7 +245,26 @@ body {
   overflow: hidden;
 }
 
-/* Background gradient removed - keeping only the accent border */
+/* Background gradient on hover only */
+.hover-card:hover {
+  box-shadow: var(--shadow-accent-strong);
+}
+
+.hover-card:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-gray-light)
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 .hover-card p {
   font-size: 17px;
