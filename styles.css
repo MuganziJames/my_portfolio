@@ -28,6 +28,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   padding: 0 80px;
 }
 
@@ -191,14 +192,18 @@ body {
 .hero-content {
   max-width: 1200px;
   width: 100%;
+  padding-top: 40px;
 }
 
 .intro-text {
   font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--color-text-primary);
-  margin-bottom: 40px;
+  margin-bottom: 0px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
   opacity: 1;
@@ -296,6 +301,10 @@ body {
     padding: 0 40px;
   }
 
+  .hero-content {
+    padding-top: 30px;
+  }
+
   .navigation {
     padding: 30px 40px;
   }
@@ -334,6 +343,10 @@ body {
 @media (max-width: 480px) {
   .hero-section {
     padding: 0 20px;
+  }
+
+  .hero-content {
+    padding-top: 20px;
   }
 
   .navigation {
