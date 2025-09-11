@@ -88,8 +88,10 @@ body {
   height: 100%;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(100, 255, 218, 0.03) 0%,
-    transparent 50%
+    rgba(100, 255, 218, 0.25) 0%,
+    rgba(100, 255, 218, 0.12) 25%,
+    rgba(100, 255, 218, 0.06) 45%,
+    transparent 70%
   );
   animation: pulseGlow 3s ease-in-out infinite;
 }
@@ -106,11 +108,11 @@ body {
   0%,
   100% {
     transform: scale(1);
-    opacity: 0.3;
+    opacity: 0.8;
   }
   50% {
-    transform: scale(1.1);
-    opacity: 0.1;
+    transform: scale(1.3);
+    opacity: 0.3;
   }
 }
 
