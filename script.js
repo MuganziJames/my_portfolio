@@ -184,4 +184,36 @@ document.addEventListener("DOMContentLoaded", function () {
       closeMenu();
     }
   });
+
+  // Experience section tab functionality
+  const companyTabs = document.querySelectorAll(".company-tab");
+  const jobDetails = document.querySelectorAll(".job-details");
+
+  // Function to switch experience tab
+  function switchExperienceTab(targetCompany) {
+    // Remove active class from all tabs and job details
+    companyTabs.forEach((tab) => tab.classList.remove("active"));
+    jobDetails.forEach((detail) => detail.classList.remove("active"));
+
+    // Add active class to selected tab and corresponding job detail
+    const selectedTab = document.querySelector(
+      `[data-company="${targetCompany}"]`
+    );
+    const selectedDetail = document.querySelector(
+      `.job-details[data-company="${targetCompany}"]`
+    );
+
+    if (selectedTab && selectedDetail) {
+      selectedTab.classList.add("active");
+      selectedDetail.classList.add("active");
+    }
+  }
+
+  // Add click event listeners to company tabs
+  companyTabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      const company = this.getAttribute("data-company");
+      switchExperienceTab(company);
+    });
+  });
 });
