@@ -1,4 +1,3 @@
-/* Theme Colors */
 :root {
   /* Primary Colors */
   --color-primary-black: #0a192f;
@@ -45,7 +44,6 @@
   --z-index-navigation: 1000;
 }
 
-/* Light Theme */
 [data-theme="light"] {
   --color-primary-black: #ffffff;
   --color-primary-white: #000000;

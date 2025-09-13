@@ -1,4 +1,3 @@
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +16,6 @@ body {
   transition: all var(--transition-normal);
 }
 
-/* Loader Styles */
 .loader-container {
   position: fixed;
   top: 0;
@@ -96,7 +94,6 @@ body {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* Loader Animations */
 @keyframes slideInName {
   to {
     opacity: 1;
@@ -116,7 +113,6 @@ body {
   }
 }
 
-/* Hide main content during loading */
 body.loading .hero-section,
 body.loading .about-section,
 body.loading .experience-section {
@@ -124,7 +120,6 @@ body.loading .experience-section {
   visibility: hidden;
 }
 
-/* Smooth transition when loader finishes */
 .hero-section,
 .about-section,
 .experience-section {
@@ -140,7 +135,6 @@ body:not(.loading) .experience-section {
   visibility: visible;
 }
 
-/* Loader Responsive Design */
 @media (max-width: 768px) {
   .loader-greeting {
     font-size: 16px;
@@ -170,7 +164,6 @@ body:not(.loading) .experience-section {
   }
 }
 
-/* Hero Section */
 .hero-section {
   height: 100vh;
   background-image: url("./images/blackboard-1846865.jpg");
@@ -185,7 +178,6 @@ body:not(.loading) .experience-section {
   padding: 0 80px;
 }
 
-/* Add overlay for better text readability */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -203,7 +195,6 @@ body:not(.loading) .experience-section {
   z-index: 2;
 }
 
-/* Navigation */
 .navigation {
   position: fixed;
   top: 0;
@@ -248,7 +239,6 @@ body:not(.loading) .experience-section {
   gap: 40px;
 }
 
-/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -278,7 +268,6 @@ body:not(.loading) .experience-section {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Mobile Menu */
 .nav-items.mobile-menu {
   position: fixed;
   top: 0;
@@ -341,7 +330,6 @@ body:not(.loading) .experience-section {
   transform: translateY(-2px);
 }
 
-/* Hero Content */
 .hero-content {
   max-width: 1200px;
   width: 100%;
@@ -374,7 +362,6 @@ body:not(.loading) .experience-section {
   transition: color var(--transition-normal);
 }
 
-/* Bio Card - Now permanently visible with enhanced styling */
 .hover-card {
   position: absolute;
   top: 100%;
@@ -398,7 +385,6 @@ body:not(.loading) .experience-section {
   overflow: hidden;
 }
 
-/* Background gradient on hover only */
 .hover-card:hover {
   box-shadow: var(--shadow-accent-strong);
 }
@@ -432,7 +418,6 @@ body:not(.loading) .experience-section {
   z-index: 2;
 }
 
-/* Shared Section Styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -479,7 +464,6 @@ body:not(.loading) .experience-section {
   transition: all var(--transition-normal);
 }
 
-/* Smooth scroll animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -513,7 +497,6 @@ body:not(.loading) .experience-section {
   }
 }
 
-/* Initial states for scroll animations */
 .scroll-animate {
   opacity: 0;
   transform: translateY(20px);
@@ -547,7 +530,6 @@ body:not(.loading) .experience-section {
   transform: translateX(0);
 }
 
-/* Hero animations - only when not loading */
 body:not(.loading) .hero-content {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -560,7 +542,6 @@ body:not(.loading) .hover-card {
   animation: fadeInUp 1.2s ease-out 0.8s both;
 }
 
-/* Navigation Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
     padding: 0 40px;
@@ -580,12 +561,10 @@ body:not(.loading) .hover-card {
     padding: 15px 40px;
   }
 
-  /* Hide desktop navigation items on mobile */
   .nav-items:not(.mobile-menu) {
     display: none;
   }
 
-  /* Show hamburger menu on mobile */
   .hamburger {
     display: flex;
     margin-left: auto;
@@ -615,7 +594,6 @@ body:not(.loading) .hover-card {
     line-height: 1.6;
   }
 
-  /* Mobile menu styles */
   .nav-items.mobile-menu {
     display: flex;
   }
