@@ -175,7 +175,7 @@ body:not(.loading) .experience-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 80px;
+  padding: 0;
 }
 
 .hero-section::before {
@@ -198,23 +198,29 @@ body:not(.loading) .experience-section {
 .navigation {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
-  padding: 20px 80px;
+  padding: 20px 0;
   z-index: var(--z-index-navigation);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: transparent;
   backdrop-filter: blur(0px);
   transition: all var(--transition-normal);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navigation.scrolled {
   background-color: var(--color-bg-primary);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-  padding: 15px 80px;
+  padding: 15px 0;
 }
 
 .nav-logo .logo-name {
@@ -334,7 +340,7 @@ body:not(.loading) .experience-section {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 40px;
+  padding: 40px 80px 0 80px;
 }
 
 .intro-text {
@@ -543,23 +549,39 @@ body:not(.loading) .hover-card {
   animation: fadeInUp 1.2s ease-out 0.8s both;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-section {
-    padding: 0 40px;
+    padding: 0;
   }
 
   .hero-content {
-    padding-top: 30px;
+    padding: 40px 60px 0 60px;
+  }
+
+  .nav-container {
+    padding: 0 60px 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0;
+  }
+
+  .hero-content {
+    padding: 30px 40px 0 40px;
   }
 
   .navigation {
-    padding: 20px 40px;
-    justify-content: space-between;
-    align-items: center;
+    padding: 20px 0;
+  }
+
+  .nav-container {
+    padding: 0 40px 0 40px;
   }
 
   .navigation.scrolled {
-    padding: 15px 40px;
+    padding: 15px 0;
   }
 
   .nav-items:not(.mobile-menu) {
@@ -611,21 +633,23 @@ body:not(.loading) .hover-card {
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 0 20px;
+    padding: 0;
   }
 
   .hero-content {
-    padding-top: 20px;
+    padding: 20px 20px 0 20px;
   }
 
   .navigation {
-    padding: 15px 20px;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px 0;
+  }
+
+  .nav-container {
+    padding: 0 20px 0 20px;
   }
 
   .navigation.scrolled {
-    padding: 12px 20px;
+    padding: 12px 0;
   }
 
   .nav-logo .logo-name {
