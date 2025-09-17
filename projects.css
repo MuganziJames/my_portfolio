@@ -62,7 +62,7 @@
 
 .project-image:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-accent-strong);
+  box-shadow: 0 12px 40px rgba(100, 255, 218, 0.6);
 }
 
 .project-image img {
