@@ -13,8 +13,8 @@
   grid-template-columns: 300px 1fr;
   gap: 60px;
   align-items: start;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 .experience-sidebar {
   position: relative;
@@ -288,12 +288,12 @@
 
 @media (max-width: 768px) {
   .experience-section {
-    padding: 80px 20px 60px;
+    padding: 80px 40px 60px;
   }
 
   .experience-header {
     margin-bottom: 50px;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .experience-content {
@@ -338,12 +338,12 @@
 
 @media (max-width: 480px) {
   .experience-section {
-    padding: 60px 15px 40px;
+    padding: 70px 20px 40px;
   }
 
   .experience-header {
     margin-bottom: 35px;
-    padding: 0 5px;
+    padding: 0;
   }
 
   .job-title {
