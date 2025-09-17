@@ -6,52 +6,143 @@
 
 .projects-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+.featured-projects {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
-.project-card {
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-light);
-  border-radius: 8px;
-  padding: 24px;
-  transition: transform 0.2s ease;
+.featured-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 400px;
 }
 
-.project-card:hover {
-  transform: translateY(-2px);
+/* Left Image Layout */
+.featured-project.left-image {
+  grid-template-areas: "image content";
+}
+
+.featured-project.left-image .project-image {
+  grid-area: image;
+}
+
+.featured-project.left-image .project-content {
+  grid-area: content;
+}
+
+/* Right Image Layout */
+.featured-project.right-image {
+  grid-template-areas: "content image";
+}
+
+.featured-project.right-image .project-image {
+  grid-area: image;
+}
+
+.featured-project.right-image .project-content {
+  grid-area: content;
+}
+
+/* Project Image */
+.project-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-accent);
+  transition: all var(--transition-normal);
+}
+
+.project-image:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-accent-strong);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all var(--transition-normal);
+}
+
+.project-image a {
+  display: block;
+  cursor: pointer;
+}
+
+.project-image a:hover img {
+  transform: scale(1.05);
+}
+
+.project-placeholder {
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-gray),
+    var(--color-accent-gray-hover)
+  );
+  color: var(--color-bg-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.project-image-placeholder {
+  position: relative;
+  aspect-ratio: 16/10;
+}
+
+.project-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Project Content */
+.project-content {
+  padding: 20px 0;
+}
+
+.project-label {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-accent-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .project-title {
   font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
   color: var(--color-text-primary);
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.tech-tag {
-  background-color: var(--color-accent-gray-light);
-  color: var(--color-accent-gray);
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-family: "Inter", sans-serif;
-  font-size: 11px;
-  font-weight: 500;
+.project-description {
+  background-color: var(--color-bg-secondary);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-border-light);
+  backdrop-filter: blur(10px);
 }
 
 .project-description p {
@@ -59,36 +150,149 @@
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-secondary);
-  margin-bottom: 12px;
+  margin: 0;
 }
 
-.project-impact {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  color: var(--color-text-muted);
-  font-style: italic;
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-.project-impact strong {
+.tech-tag {
+  background-color: var(--color-accent-gray-light);
   color: var(--color-accent-gray);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--color-accent-gray);
+  transition: all var(--transition-normal);
+}
+
+.tech-tag:hover {
+  background-color: var(--color-accent-gray);
+  color: var(--color-bg-primary);
+  transform: scale(1.05);
 }
 
 .project-links {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 16px;
+  align-items: center;
 }
 
 .project-link {
-  color: var(--color-accent-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
   text-decoration: none;
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+  transition: all var(--transition-normal);
 }
 
 .project-link:hover {
-  text-decoration: underline;
+  background-color: var(--color-accent-gray);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent-gray);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+}
+
+.project-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .featured-projects {
+    gap: 80px;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 500px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Specific background images for each project */
+  .featured-project.left-image:nth-child(1) {
+    background-image: url("images/climatewise.png");
+  }
+
+  .featured-project.right-image:nth-child(2) {
+    background-image: url("images/ajirawise.png");
+  }
+
+  .featured-project.left-image:nth-child(3) {
+    background-image: url("images/portfolio.png");
+  }
+
+  /* Dark overlay for better text readability - stronger for ClimateWise and Ajirawise */
+  .featured-project::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85);
+    z-index: 1;
+  }
+
+  /* Make ClimateWise and Ajirawise backgrounds much more subtle */
+  .featured-project.left-image:nth-child(1)::before,
+  .featured-project.right-image:nth-child(2)::before {
+    background: rgba(10, 25, 47, 0.92);
+  }
+
+  /* Keep Portfolio background more visible */
+  .featured-project.left-image:nth-child(3)::before {
+    background: rgba(10, 25, 47, 0.75);
+  }
+
+  /* On mobile, always show content over image background */
+  .featured-project.left-image,
+  .featured-project.right-image {
+    grid-template-areas: "content";
+  }
+
+  /* Hide the separate project image div on mobile */
+  .featured-project .project-image {
+    display: none;
+  }
+
+  .project-content {
+    grid-area: content;
+    position: relative;
+    z-index: 2;
+    padding: 40px 30px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border-light);
+    border-radius: 12px;
+  }
+
+  /* Enhanced mobile background image effect */
+  .project-description {
+    background-color: rgba(17, 34, 64, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+  }
 }
 
 @media (max-width: 768px) {
@@ -96,8 +300,33 @@
     padding: 80px 40px 60px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .projects-header {
+    margin-bottom: 60px;
+  }
+
+  .featured-projects {
+    gap: 60px;
+  }
+
+  .featured-project {
+    gap: 30px;
+  }
+
+  .project-title {
+    font-size: 24px;
+  }
+
+  .project-description {
+    padding: 20px;
+  }
+
+  .project-description p {
+    font-size: 15px;
+  }
+
+  .tech-tag {
+    font-size: 11px;
+    padding: 4px 8px;
   }
 }
 
@@ -106,7 +335,34 @@
     padding: 70px 20px 40px;
   }
 
-  .project-card {
-    padding: 20px;
+  .featured-projects {
+    gap: 50px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+
+  .project-description {
+    padding: 18px;
+  }
+
+  .project-description p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .project-links {
+    gap: 12px;
+  }
+
+  .project-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .project-link svg {
+    width: 18px;
+    height: 18px;
   }
 }
