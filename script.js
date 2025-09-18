@@ -190,4 +190,39 @@ document.addEventListener("DOMContentLoaded", function () {
       switchExperienceTab(company);
     });
   });
+
+  // Show More Projects functionality
+  const showMoreBtn = document.getElementById("showMoreProjects");
+  const hiddenProjects = document.querySelectorAll(".hidden-project");
+  let isShowingMore = false;
+
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", function () {
+      if (!isShowingMore) {
+        // Show hidden projects
+        hiddenProjects.forEach((project, index) => {
+          setTimeout(() => {
+            project.classList.add("show");
+          }, index * 100); // Stagger the animation
+        });
+        showMoreBtn.textContent = "Show Less";
+        isShowingMore = true;
+      } else {
+        // Hide projects
+        hiddenProjects.forEach((project) => {
+          project.classList.remove("show");
+        });
+        showMoreBtn.textContent = "Show More";
+        isShowingMore = false;
+
+        // Scroll back to the projects section
+        setTimeout(() => {
+          document.querySelector(".other-projects-container").scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 300);
+      }
+    });
+  }
 });
