@@ -343,7 +343,7 @@ body:not(.loading) .experience-section {
   font-weight: 400;
   color: var(--color-text-secondary);
   margin: 0;
-  padding: 0;
+  padding: 0 0 10px 0;
   opacity: 0.8;
   letter-spacing: 0.5px;
 }
@@ -363,8 +363,8 @@ body:not(.loading) .experience-section {
 }
 
 .name {
-  font-family: "Crimson Text", serif;
-  font-size: clamp(64px, 10vw, 140px);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(40px, 7vw, 85px);
   font-weight: 700;
   line-height: 1;
   color: var(--color-accent-gray);
@@ -372,6 +372,7 @@ body:not(.loading) .experience-section {
   display: inline-block;
   cursor: pointer;
   transition: color var(--transition-normal);
+  letter-spacing: 1px;
 }
 
 .hover-card {
@@ -383,8 +384,8 @@ body:not(.loading) .experience-section {
   border: 1px solid var(--color-border-accent);
   border-radius: 12px;
   padding: 28px 32px;
-  width: clamp(480px, 95%, 800px);
-  max-width: 90vw;
+  width: 100%;
+  max-width: min(500px, 100%);
   opacity: 1;
   visibility: visible;
   transform: translateY(-3px);
@@ -693,5 +694,32 @@ body:not(.loading) .hover-card {
   .resume-btn {
     font-size: 12px;
     padding: 10px 20px;
+  }
+}
+
+/* Responsive styles for hover card */
+@media (min-width: 1024px) {
+  .hover-card {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hover-card {
+    max-width: 90vw;
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hover-card {
+    max-width: 95vw;
+    padding: 18px 20px;
+    margin-top: 20px;
+  }
+
+  .hover-card p {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
