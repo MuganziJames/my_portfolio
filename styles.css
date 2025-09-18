@@ -337,6 +337,17 @@ body:not(.loading) .experience-section {
   padding-top: 40px;
 }
 
+.hero-greeting {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
 .intro-text {
   font-family: "Inter", sans-serif;
   font-size: 20px;
