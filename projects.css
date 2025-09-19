@@ -395,27 +395,11 @@
   font-size: 16px;
   color: var(--color-accent-gray);
   text-decoration: none;
-  position: relative;
   transition: all var(--transition-normal);
 }
 
 .archive-link:hover {
   color: var(--color-accent-gray-hover);
-}
-
-.archive-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--color-accent-gray);
-  transition: width var(--transition-normal);
-}
-
-.archive-link:hover::after {
-  width: 100%;
 }
 
 .other-projects-grid {

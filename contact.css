@@ -48,6 +48,16 @@
   margin: 4px 0;
 }
 
+.contact-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.contact-link:hover {
+  color: var(--color-accent-gray);
+}
+
 .social-links {
   display: flex;
   gap: 16px;
