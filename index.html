@@ -140,7 +140,12 @@
             onclick="scrollToSection('contact'); closeMenu()"
             >04. Contact</a
           >
-          <a href="#resume" class="resume-btn" onclick="closeMenu()">Resume</a>
+          <a
+            href="#resume"
+            class="resume-btn"
+            onclick="downloadCV(); closeMenu()"
+            >Resume</a
+          >
         </div>
 
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -634,7 +639,8 @@
               <p class="card-description">
                 An African fashion & culture mobile app featuring style
                 discovery, personal lookbooks, and a fashion blog with
-                authentication via TechCrush API.
+                authentication via API designed by our backend team to be used
+                by web and mobile app developers.
               </p>
               <div class="card-tech">
                 <span class="card-tech-tag">React Native</span>
