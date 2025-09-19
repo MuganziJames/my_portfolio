@@ -300,9 +300,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
   }
 });
-
-// CV Download functionality
-window.downloadCV = function () {
-  // Simply open CV in new tab for clean viewing with download button
-  window.open("cv.html", "_blank");
-};
