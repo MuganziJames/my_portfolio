@@ -225,4 +225,78 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Contact form handling
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector(".submit-btn");
+      const btnText = submitBtn.querySelector(".btn-text");
+      const btnLoading = submitBtn.querySelector(".btn-loading");
+
+      // Show loading state
+      submitBtn.disabled = true;
+      btnText.style.display = "none";
+      btnLoading.style.display = "inline";
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          // Show success message
+          showFormMessage(
+            "Thank you! Your message has been sent successfully. I'll get back to you soon.",
+            "success"
+          );
+          contactForm.reset();
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        // Show error message
+        showFormMessage(
+          "Sorry, there was an error sending your message. Please try again or contact me directly.",
+          "error"
+        );
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.style.display = "inline";
+        btnLoading.style.display = "none";
+      }
+    });
+  }
+
+  function showFormMessage(message, type) {
+    // Remove existing message
+    const existingMessage = document.querySelector(".form-message");
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+
+    // Create new message element
+    const messageElement = document.createElement("div");
+    messageElement.className = `form-message form-${type}`;
+    messageElement.textContent = message;
+
+    // Insert after the form
+    const contactForm = document.getElementById("contactForm");
+    contactForm.parentNode.insertBefore(
+      messageElement,
+      contactForm.nextSibling
+    );
+
+    // Remove message after 5 seconds
+    setTimeout(() => {
+      if (messageElement) {
+        messageElement.remove();
+      }
+    }, 5000);
+  }
 });
