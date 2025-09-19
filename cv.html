@@ -15,9 +15,7 @@
   <body>
     <!-- Download Button for CV viewing -->
     <div class="cv-actions no-print">
-      <button onclick="downloadPDF()" class="download-btn">
-        Download PDF
-      </button>
+      <button onclick="downloadPDF()" class="download-btn">Download PDF</button>
     </div>
 
     <div class="cv-container" id="cvContainer">
@@ -343,8 +341,8 @@
     <script>
       function downloadPDF() {
         // Set document title for PDF filename
-        document.title = 'James_Muganzi_CV_25';
-        
+        document.title = "James_Muganzi_CV_25";
+
         // Trigger print dialog
         window.print();
       }
