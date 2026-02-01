@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -119,25 +119,37 @@
           <a
             href="#about"
             class="nav-item"
-            onclick="scrollToSection('about'); closeMenu()"
+            onclick="
+              scrollToSection('about');
+              closeMenu();
+            "
             >01. About</a
           >
           <a
             href="#experience"
             class="nav-item"
-            onclick="scrollToSection('experience'); closeMenu()"
+            onclick="
+              scrollToSection('experience');
+              closeMenu();
+            "
             >02. Experience</a
           >
           <a
             href="#projects"
             class="nav-item"
-            onclick="scrollToSection('projects'); closeMenu()"
+            onclick="
+              scrollToSection('projects');
+              closeMenu();
+            "
             >03. Projects</a
           >
           <a
             href="#contact"
             class="nav-item"
-            onclick="scrollToSection('contact'); closeMenu()"
+            onclick="
+              scrollToSection('contact');
+              closeMenu();
+            "
             >04. Contact</a
           >
           <a
@@ -430,141 +442,148 @@
         </div>
 
         <div class="featured-projects scroll-animate">
-          <!-- Project 1: ClimateWise (Image Left) -->
+          <!-- Project 1: WorkeAfrica Frontend (Image Left) -->
           <div class="featured-project left-image">
             <div class="project-image">
               <a
-                href="https://finalaiproject-fexrvamcmq8p76hma3e5fy.streamlit.app/"
+                href="https://github.com/MuganziJames/workeafrica"
                 target="_blank"
               >
-                <img src="images/climatewise.png" alt="ClimateWise Preview" />
+                <img
+                  src="images/workeafricafrontend.png"
+                  alt="WorkeAfrica Frontend Preview"
+                />
               </a>
             </div>
             <div class="project-content">
               <span class="project-label">Featured Project</span>
               <h3 class="project-title">
-                ClimateWise – AI-Powered Climate Risk System
+                WorkeAfrica – AI-Powered Job Discovery Platform
               </h3>
               <div class="project-description">
                 <p>
-                  I built ClimateWise to help communities prepare for climate
-                  disasters. Unlike tools that give generic forecasts,
-                  ClimateWise uses machine learning on global datasets to
-                  predict floods, droughts, hunger risk, and crop yield. With
-                  natural language queries and real-time dashboards, it makes
-                  climate insights accessible to everyone.
+                  WorkeAfrica is a cutting-edge job discovery and career
+                  management platform revolutionizing job hunting across Africa.
+                  The platform leverages AI-powered CV parsing and intelligent
+                  job matching algorithms to deliver personalized job
+                  recommendations directly to candidates. Built with
+                  enterprise-grade security featuring httpOnly cookie-based
+                  authentication, automatic token refresh, and comprehensive
+                  CSRF protection, the application provides a seamless user
+                  experience with real-time job search, advanced filtering
+                  capabilities, and an intelligent recommendation system. As
+                  part of the frontend development team, I actively implemented
+                  key features including the Next.js 16 frontend with App
+                  Router, sophisticated state management using Zustand and React
+                  Query, comprehensive dashboard components with profile
+                  management featuring AI-powered CV extraction, job search
+                  system with real-time filtering, saved jobs functionality, and
+                  tier-based recommendation engine.
                 </p>
               </div>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">Streamlit</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/MuganziJames/final_AI_project.git"
-                  class="project-link github"
-                  target="_blank"
-                >
-                  <svg viewBox="0 0 24 24" width="20" height="20">
-                    <path
-                      fill="currentColor"
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://finalaiproject-fexrvamcmq8p76hma3e5fy.streamlit.app/"
-                  class="project-link external"
-                  target="_blank"
-                >
-                  <svg viewBox="0 0 24 24" width="20" height="20">
-                    <path
-                      fill="currentColor"
-                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-                    />
-                  </svg>
-                </a>
+                <span class="tech-tag">Next.js 16</span>
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Zustand</span>
+                <span class="tech-tag">React Query</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Radix UI</span>
+                <span class="tech-tag">OAuth 2.0</span>
+                <span class="tech-tag">FastAPI</span>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: Ajirawise (Image Right) -->
+          <!-- Project 2: WorkeAfrica Backend (Image Right) -->
           <div class="featured-project right-image">
             <div class="project-content">
               <span class="project-label">Featured Project</span>
-              <h3 class="project-title">Ajirawise – Smart Job Alert Bot</h3>
+              <h3 class="project-title">
+                WorkeAfrica Backend – AI-Powered Job Matching Platform
+              </h3>
               <div class="project-description">
                 <p>
-                  I created Ajirawise to solve the challenge of unreliable job
-                  postings for students to experienced professionals. Unlike
-                  basic job boards, Ajirawise delivers verified internships and
-                  jobs via WhatsApp and Telegram, powered by automation and AI
-                  career support. It ensures young professionals access real
-                  opportunities, fast.
+                  A production-grade job matching platform that uses AI
+                  embeddings and semantic search to connect African job seekers
+                  with relevant opportunities across all industries. The system
+                  automates job scraping from LinkedIn and BrighterMonday,
+                  performs intelligent CV parsing, and delivers personalized
+                  recommendations through a three-tier subscription model (Free,
+                  Pay-per-use, Monthly) via Telegram, Email, and WhatsApp.
+                  Features include AI-generated professional documents (CVs and
+                  cover letters), real-time payment processing with paystack
+                  integration, natural language chatbot for job searches, and
+                  comprehensive admin analytics dashboards. Built with FastAPI
+                  and PostgreSQL with pgvector, deployed with full CI/CD
+                  pipelines to DigitalOcean infrastructure.
                 </p>
               </div>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Twilio API</span>
-                <span class="tech-tag">Supabase</span>
-                <span class="tech-tag">Render</span>
-                <span class="tech-tag">OpenRouter API</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/MuganziJames/job-system.git"
-                  class="project-link github"
-                  target="_blank"
-                >
-                  <svg viewBox="0 0 24 24" width="20" height="20">
-                    <path
-                      fill="currentColor"
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                </a>
+                <span class="tech-tag">Python 3.11</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">OpenAI</span>
+                <span class="tech-tag">SQLAlchemy</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">Telegram Bot API</span>
+                <span class="tech-tag">Paystack API</span>
               </div>
             </div>
             <div class="project-image">
               <div class="project-image-placeholder">
-                <img src="images/ajirawise.png" alt="Ajirawise Preview" />
+                <img
+                  src="images/workeafricabackend.png"
+                  alt="WorkeAfrica Backend Preview"
+                />
               </div>
             </div>
           </div>
 
-          <!-- Project 3: Portfolio (Image Left) -->
+          <!-- Project 3: GreenPulse (Image Left) -->
           <div class="featured-project left-image">
             <div class="project-image">
-              <a href="https://muganzijamesdev.com" target="_blank">
-                <img src="images/portfolio.png" alt="Portfolio Preview" />
+              <a href="https://greenpulse-vert.vercel.app/" target="_blank">
+                <img src="images/greenpulseai.png" alt="GreenPulse Preview" />
               </a>
             </div>
             <div class="project-content">
               <span class="project-label">Featured Project</span>
               <h3 class="project-title">
-                my-portfolio – Personal Developer Portfolio
+                GreenPulse – AI-Powered Climate Intelligence Platform
               </h3>
               <div class="project-description">
                 <p>
-                  I developed my-portfolio as a clean, responsive website to
-                  showcase my work and skills. Unlike generic templates, it is
-                  fully hand-coded with HTML, CSS, and JavaScript, reflecting
-                  both my design eye and front-end coding expertise. It
-                  demonstrates my ability to build fast, user-friendly, and
-                  professional web experiences from scratch.
+                  GreenPulse is an AI-powered climate intelligence platform
+                  built by a team of three during a 24-hour hackathon, where I
+                  was trusted to develop the entire backend system in under 12
+                  hours. The backend leverages FastAPI and GPT-4o to analyze
+                  climate patterns from NASA POWER and Google Weather APIs,
+                  providing real-time risk detection, regulatory compliance
+                  checking, and decision-support for environmental impact
+                  assessments. Built with a sophisticated AI intelligence
+                  engine, the system delivers multi-modal insights through a
+                  RESTful API, web dashboard, and intelligent Telegram bot,
+                  helping organizations make climate-smart decisions while
+                  ensuring NEMA compliance.
                 </p>
               </div>
               <div class="project-tech">
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">OpenRouter (GPT-4o)</span>
+                <span class="tech-tag">NASA POWER API</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TailwindCSS</span>
+                <span class="tech-tag">Telegram Bot API</span>
               </div>
               <div class="project-links">
                 <a
-                  href="https://github.com/MuganziJames/my_portfolio.git"
+                  href="https://github.com/MuganziJames/greenpulse.git"
                   class="project-link github"
                   target="_blank"
                 >
@@ -576,7 +595,7 @@
                   </svg>
                 </a>
                 <a
-                  href="https://muganzijamesdev.com"
+                  href="https://greenpulse-vert.vercel.app/"
                   class="project-link external"
                   target="_blank"
                 >
@@ -605,7 +624,166 @@
           </div>
 
           <div class="other-projects-grid">
-            <!-- Project 1: MyStyleMag -->
+            <!-- Project 1: ClimateWise (Moved from Featured) -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="card-icons">
+                  <svg
+                    class="folder-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div class="card-links">
+                  <a
+                    href="https://github.com/MuganziJames/final_AI_project.git"
+                    target="_blank"
+                    class="card-link"
+                  >
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                      <path
+                        fill="currentColor"
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://finalaiproject-fexrvamcmq8p76hma3e5fy.streamlit.app/"
+                    target="_blank"
+                    class="card-link"
+                  >
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                      <path
+                        fill="currentColor"
+                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h4 class="card-title">ClimateWise – AI Climate Risk System</h4>
+              <p class="card-description">
+                Machine learning platform predicting floods, droughts, hunger
+                risk, and crop yields using global datasets with natural
+                language queries and real-time dashboards for accessible climate
+                insights.
+              </p>
+              <div class="card-tech">
+                <span class="card-tech-tag">Python</span>
+                <span class="card-tech-tag">Pandas</span>
+                <span class="card-tech-tag">Scikit-learn</span>
+                <span class="card-tech-tag">Streamlit</span>
+              </div>
+            </div>
+
+            <!-- Project 2: Ajirawise (Moved from Featured) -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="card-icons">
+                  <svg
+                    class="folder-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div class="card-links">
+                  <a
+                    href="https://github.com/MuganziJames/job-system.git"
+                    target="_blank"
+                    class="card-link"
+                  >
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                      <path
+                        fill="currentColor"
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h4 class="card-title">Ajirawise – Smart Job Alert Bot</h4>
+              <p class="card-description">
+                Automated job posting platform delivering verified internships
+                and jobs via WhatsApp and Telegram with AI career support,
+                ensuring young professionals access real opportunities fast.
+              </p>
+              <div class="card-tech">
+                <span class="card-tech-tag">Python</span>
+                <span class="card-tech-tag">Twilio API</span>
+                <span class="card-tech-tag">Supabase</span>
+                <span class="card-tech-tag">OpenRouter API</span>
+              </div>
+            </div>
+
+            <!-- Project 3: my-portfolio (Moved from Featured) -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="card-icons">
+                  <svg
+                    class="folder-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div class="card-links">
+                  <a
+                    href="https://github.com/MuganziJames/my_portfolio.git"
+                    target="_blank"
+                    class="card-link"
+                  >
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                      <path
+                        fill="currentColor"
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://muganzijamesdev.com"
+                    target="_blank"
+                    class="card-link"
+                  >
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                      <path
+                        fill="currentColor"
+                        d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <h4 class="card-title">my-portfolio – Developer Portfolio</h4>
+              <p class="card-description">
+                Fully hand-coded responsive portfolio website showcasing work
+                and skills with clean design, reflecting front-end expertise and
+                ability to build professional web experiences from scratch.
+              </p>
+              <div class="card-tech">
+                <span class="card-tech-tag">HTML</span>
+                <span class="card-tech-tag">CSS</span>
+                <span class="card-tech-tag">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Project 4: MyStyleMag -->
             <div class="project-card">
               <div class="card-header">
                 <div class="card-icons">

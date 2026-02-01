@@ -231,15 +231,15 @@
 
   /* Specific background images for each project */
   .featured-project.left-image:nth-child(1) {
-    background-image: url("images/climatewise.png");
+    background-image: url("images/workeafricafrontend.png");
   }
 
   .featured-project.right-image:nth-child(2) {
-    background-image: url("images/ajirawise.png");
+    background-image: url("images/workeafricabackend.png");
   }
 
   .featured-project.left-image:nth-child(3) {
-    background-image: url("images/portfolio.png");
+    background-image: url("images/greenpulseai.png");
   }
 
   /* Dark overlay for better text readability - stronger for ClimateWise and Ajirawise */
