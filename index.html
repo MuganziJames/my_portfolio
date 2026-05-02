@@ -152,12 +152,10 @@
             "
             >04. Contact</a
           >
-          <a
-            href="https://drive.google.com/uc?export=download&id=18_hZfA9BBlIw2m7itf2_iL0WfWdw8gMg"
+          <button
             class="resume-btn"
-            target="_blank"
-            onclick="closeMenu()"
-            >Resume</a
+            onclick="openCvModal(); closeMenu();"
+            >Resume</button
           >
         </div>
 
@@ -1342,5 +1340,195 @@
         </div>
       </div>
     </section>
+
+    <!-- CV Template Selection Modal -->
+    <div class="cv-modal-overlay" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+      <div class="cv-modal">
+
+        <!-- Header -->
+        <div class="cv-modal-header">
+          <div class="cv-modal-title-group">
+            <p class="cv-modal-eyebrow">Download Resume</p>
+            <h2 class="cv-modal-title" id="cvModalTitle">Choose a Template</h2>
+          </div>
+          <button class="cv-modal-close" id="cvModalClose" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <p class="cv-modal-subtitle">Select a style below — your CV will be generated and downloaded instantly.</p>
+
+        <!-- Template Grid -->
+        <div class="cv-templates-grid">
+
+          <!-- 1. UK Professional -->
+          <div class="cv-template-card" data-template="uk_professional_template" role="button" tabindex="0">
+            <div class="cv-preview uk-professional">
+              <div class="prev-header-center">
+                <div class="prev-line thick short"></div>
+                <div class="prev-line thin medium"></div>
+                <div class="prev-line thin short"></div>
+              </div>
+              <div class="prev-divider"></div>
+              <div class="prev-body">
+                <div class="prev-line thin long"></div>
+                <div class="prev-line thin long"></div>
+                <div class="prev-line thin medium"></div>
+              </div>
+            </div>
+            <div class="cv-template-info">
+              <h4>UK Professional</h4>
+              <span>Classic serif · centered header</span>
+            </div>
+          </div>
+
+          <!-- 2. Bizarre & Modern -->
+          <div class="cv-template-card" data-template="bizarre_modern" role="button" tabindex="0">
+            <div class="cv-preview bizarre-modern">
+              <div class="prev-bm-header">
+                <div class="prev-bm-left">
+                  <div class="prev-line thick medium orange"></div>
+                  <div class="prev-line thin short orange-dim"></div>
+                </div>
+                <div class="prev-bm-right">
+                  <div class="prev-dot"></div>
+                  <div class="prev-dot"></div>
+                  <div class="prev-dot"></div>
+                </div>
+              </div>
+              <div class="prev-divider"></div>
+              <div class="prev-body">
+                <div class="prev-line thin long"></div>
+                <div class="prev-line thin medium"></div>
+                <div class="prev-line thin long"></div>
+              </div>
+            </div>
+            <div class="cv-template-info">
+              <h4>Bizarre &amp; Modern</h4>
+              <span>Orange accents · sans-serif</span>
+            </div>
+          </div>
+
+          <!-- 3. Minimal Professional -->
+          <div class="cv-template-card" data-template="minimal_professional" role="button" tabindex="0">
+            <div class="cv-preview minimal-professional">
+              <div class="prev-dark-header">
+                <div class="prev-line thick medium white"></div>
+                <div class="prev-line thin short white-dim"></div>
+              </div>
+              <div class="prev-body padded">
+                <div class="prev-line thin long"></div>
+                <div class="prev-line thin long"></div>
+                <div class="prev-line thin medium"></div>
+              </div>
+            </div>
+            <div class="cv-template-info">
+              <h4>Minimal Professional</h4>
+              <span>Dark header block · clean body</span>
+            </div>
+          </div>
+
+          <!-- 4. Bold -->
+          <div class="cv-template-card" data-template="bold" role="button" tabindex="0">
+            <div class="cv-preview bold-template">
+              <div class="prev-dark-header">
+                <div class="prev-line thick long white"></div>
+                <div class="prev-line thin medium white-dim"></div>
+              </div>
+              <div class="prev-two-col">
+                <div class="prev-col-label">
+                  <div class="prev-line thin short"></div>
+                  <div class="prev-line thin short"></div>
+                  <div class="prev-line thin short"></div>
+                </div>
+                <div class="prev-col-content">
+                  <div class="prev-line thin long"></div>
+                  <div class="prev-line thin medium"></div>
+                  <div class="prev-line thin long"></div>
+                </div>
+              </div>
+            </div>
+            <div class="cv-template-info">
+              <h4>Bold</h4>
+              <span>Section labels left · dark header</span>
+            </div>
+          </div>
+
+          <!-- 5. Millennial Style -->
+          <div class="cv-template-card" data-template="millennial_style" role="button" tabindex="0">
+            <div class="cv-preview millennial-style">
+              <div class="prev-ms-layout">
+                <div class="prev-ms-sidebar">
+                  <div class="prev-line thin medium white"></div>
+                  <div class="prev-line thin short white-dim"></div>
+                  <div class="prev-line thin medium white"></div>
+                  <div class="prev-line thin short white-dim"></div>
+                </div>
+                <div class="prev-ms-content">
+                  <div class="prev-line thin long"></div>
+                  <div class="prev-line thin medium"></div>
+                  <div class="prev-line thin long"></div>
+                  <div class="prev-line thin short"></div>
+                </div>
+              </div>
+            </div>
+            <div class="cv-template-info">
+              <h4>Millennial Style</h4>
+              <span>Navy sidebar · two-column layout</span>
+            </div>
+          </div>
+
+          <!-- 6. Corporate Classic -->
+          <div class="cv-template-card" data-template="corporate_classic" role="button" tabindex="0">
+            <div class="cv-preview corporate-classic">
+              <div class="prev-cc-header">
+                <div class="prev-cc-name">
+                  <div class="prev-line thin short dark"></div>
+                  <div class="prev-line very-thick medium dark"></div>
+                </div>
+                <div class="prev-cc-contact">
+                  <div class="prev-line thin short dark"></div>
+                  <div class="prev-line thin short dark"></div>
+                </div>
+              </div>
+              <div class="prev-divider dark"></div>
+              <div class="prev-body">
+                <div class="prev-line thin long dark"></div>
+                <div class="prev-line thin medium dark"></div>
+              </div>
+            </div>
+            <div class="cv-template-info">
+              <h4>Corporate Classic</h4>
+              <span>Monochrome serif · stacked name</span>
+            </div>
+          </div>
+
+        </div><!-- /.cv-templates-grid -->
+
+        <!-- Download Button -->
+        <div class="cv-modal-footer">
+          <p class="cv-modal-hint" id="cvModalHint">Select a template to continue</p>
+          <button class="cv-download-btn" id="cvDownloadBtn" disabled>
+            <span class="cv-btn-text">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Generate &amp; Download
+            </span>
+            <span class="cv-btn-loading" aria-live="polite">
+              <span class="cv-spinner"></span>
+              Generating your CV...
+            </span>
+          </button>
+        </div>
+
+      </div><!-- /.cv-modal -->
+    </div><!-- /.cv-modal-overlay -->
+
   </body>
 </html>

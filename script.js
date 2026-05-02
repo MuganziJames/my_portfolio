@@ -300,3 +300,136 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
   }
 });
+
+/* ============================================================
+   CV TEMPLATE MODAL
+   ============================================================ */
+
+// TODO: Paste your hosted backend URL here (no trailing slash)
+// Example: "https://api.muganzijamesdev.com" or "https://your-app.onrender.com"
+const BACKEND_URL = "";
+
+(function initCvModal() {
+  const overlay     = document.getElementById("cvModal");
+  const closeBtn    = document.getElementById("cvModalClose");
+  const downloadBtn = document.getElementById("cvDownloadBtn");
+  const hintEl      = document.getElementById("cvModalHint");
+  const errorEl     = (() => {
+    const el = document.createElement("p");
+    el.className = "cv-modal-error";
+    el.style.display = "none";
+    downloadBtn.parentNode.appendChild(el);
+    return el;
+  })();
+
+  let selectedTemplate = null;
+
+  /* ---- Open / Close ---- */
+  window.openCvModal = function () {
+    overlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    // Focus the modal for accessibility
+    overlay.querySelector(".cv-modal").focus?.();
+  };
+
+  window.closeCvModal = function () {
+    overlay.classList.remove("is-open");
+    document.body.style.overflow = "";
+  };
+
+  // Close on overlay click (outside modal box)
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeCvModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+      closeCvModal();
+    }
+  });
+
+  closeBtn.addEventListener("click", closeCvModal);
+
+  /* ---- Template card selection ---- */
+  const cards = overlay.querySelectorAll(".cv-template-card");
+
+  cards.forEach((card) => {
+    const select = () => {
+      // Deselect previous
+      cards.forEach((c) => c.classList.remove("selected"));
+
+      // Select new
+      card.classList.add("selected");
+      selectedTemplate = card.dataset.template;
+
+      // Enable download button
+      downloadBtn.disabled = false;
+      hintEl.textContent = `Template: ${card.querySelector("h4").textContent}`;
+      errorEl.style.display = "none";
+    };
+
+    card.addEventListener("click", select);
+
+    // Keyboard: Enter / Space activates card
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        select();
+      }
+    });
+  });
+
+  /* ---- Download / Generate ---- */
+  downloadBtn.addEventListener("click", async () => {
+    if (!selectedTemplate) return;
+
+    if (!BACKEND_URL) {
+      showError("Backend URL is not configured yet. Please check back soon.");
+      return;
+    }
+
+    setLoading(true);
+    errorEl.style.display = "none";
+
+    try {
+      const response = await fetch(`${BACKEND_URL}/generate-cv`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ template: selectedTemplate }),
+      });
+
+      if (!response.ok) {
+        const detail = await response.json().catch(() => ({}));
+        throw new Error(detail.detail || `Server error ${response.status}`);
+      }
+
+      const blob = await response.blob();
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement("a");
+      a.href     = url;
+      a.download = `James_Muganzi_CV.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      // Close the modal after a brief moment
+      setTimeout(closeCvModal, 400);
+    } catch (err) {
+      showError(err.message || "Failed to generate CV. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  function setLoading(on) {
+    downloadBtn.classList.toggle("is-loading", on);
+    downloadBtn.disabled = on;
+  }
+
+  function showError(msg) {
+    errorEl.textContent = msg;
+    errorEl.style.display = "block";
+  }
+})();
