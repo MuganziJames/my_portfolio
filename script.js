@@ -301,13 +301,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* ============================================================
-   CV TEMPLATE MODAL
-   ============================================================ */
 
-// TODO: Paste your hosted backend URL here (no trailing slash)
-// Example: "https://api.muganzijamesdev.com" or "https://your-app.onrender.com"
-const BACKEND_URL = "";
+const BACKEND_URL = "https://myportfolio-production-04cf.up.railway.app";
 
 (function initCvModal() {
   const overlay     = document.getElementById("cvModal");
