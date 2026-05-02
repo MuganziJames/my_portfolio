@@ -888,206 +888,249 @@ body:not(.loading) .hover-card {
   line-height: 1.4;
 }
 
-/* ---- CSS Art Previews ---- */
+/* ---- Template Previews — styled identity cards ---- */
 .cv-preview {
   height: 110px;
-  padding: 12px 14px 8px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px;
   position: relative;
   overflow: hidden;
 }
 
-/* Shared primitive shapes */
-.prev-line {
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-.prev-line.very-thick { height: 7px; }
-.prev-line.thick  { height: 5px; }
-.prev-line.thin   { height: 3px; }
-
-.prev-line.long   { width: 90%; }
-.prev-line.medium { width: 65%; }
-.prev-line.short  { width: 42%; }
-
-/* Colour variants */
-.prev-line:not(.white):not(.white-dim):not(.orange):not(.orange-dim):not(.dark) {
-  background: var(--color-border-light);
-}
-.prev-line.white      { background: rgba(255,255,255,0.75); }
-.prev-line.white-dim  { background: rgba(255,255,255,0.35); }
-.prev-line.orange     { background: #f97316; }
-.prev-line.orange-dim { background: rgba(249,115,22,0.45); }
-.prev-line.dark       { background: rgba(10,25,47,0.55); }
-
-.prev-divider {
-  height: 1px;
-  width: 100%;
-  margin: 2px 0;
-  background: var(--color-border-light);
-  flex-shrink: 0;
-}
-.prev-divider.dark { background: rgba(10,25,47,0.3); }
-
-/* 1. UK Professional — centred */
-.uk-professional .prev-header-center {
-  display: flex;
-  flex-direction: column;
+/* 1. UK Professional — centered serif on white */
+.uk-professional {
+  background: #ffffff;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  text-align: center;
+  padding: 14px;
+  gap: 5px;
 }
 
-.uk-professional .prev-body {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 2px;
+.prev-uk-name {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.3px;
 }
 
-/* 2. Bizarre Modern — left name + right dots */
-.bizarre-modern .prev-bm-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.prev-uk-rule {
+  width: 36px;
+  height: 1px;
+  background: #aaa;
+  flex-shrink: 0;
 }
 
-.bizarre-modern .prev-bm-left {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.prev-uk-role {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 9.5px;
+  color: #777;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
 }
 
-.bizarre-modern .prev-bm-right {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-end;
+/* 2. Bizarre Modern — dark background, orange accent bar */
+.bizarre-modern {
+  background: #141414;
+  flex-direction: row;
+  align-items: stretch;
 }
 
-.prev-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+.prev-bm-bar {
+  width: 4px;
   background: #f97316;
   flex-shrink: 0;
 }
 
-.bizarre-modern .prev-body {
+.prev-bm-inner {
+  flex: 1;
+  padding: 14px 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+}
+
+.prev-bm-first {
+  font-family: "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.prev-bm-last {
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
   margin-top: 2px;
+  margin-bottom: 9px;
 }
 
-/* 3. Minimal Professional — dark header block */
-.minimal-professional .prev-dark-header,
-.bold-template .prev-dark-header {
-  background: #17334f;
-  border-radius: 6px 6px 0 0;
-  padding: 8px 10px;
+.prev-bm-tag {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #f97316;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid rgba(249,115,22,0.5);
+  padding: 2px 6px;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+
+/* 3. Minimal Professional — navy header block + light body */
+.minimal-professional {
+  flex-direction: column;
+}
+
+.prev-mp-top {
+  background: #112240;
+  flex: 0 0 52%;
+  padding: 0 12px 8px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin: -12px -14px 8px;
+  justify-content: flex-end;
 }
 
-.minimal-professional .prev-body.padded {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.prev-mp-name {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-/* 4. Bold — two-column body */
-.bold-template .prev-two-col {
-  display: flex;
-  gap: 8px;
+.prev-mp-role {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5px;
+  color: rgba(100,255,218,0.8);
+  margin-top: 3px;
+  letter-spacing: 0.3px;
+}
+
+.prev-mp-bottom {
+  background: #f5f5f5;
   flex: 1;
-  margin-top: 4px;
-}
-
-.prev-col-label {
+  padding: 7px 12px;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 28%;
-  flex-shrink: 0;
+  align-items: center;
 }
 
-.prev-col-content {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  flex: 1;
-}
-
-/* 5. Millennial style — sidebar layout */
-.millennial-style {
-  padding: 0;
-}
-
-.prev-ms-layout {
-  display: flex;
+.prev-mp-section {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #aaa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid #e0e0e0;
+  padding-bottom: 3px;
   width: 100%;
-  height: 100%;
 }
 
-.prev-ms-sidebar {
-  width: 38%;
-  background: #0d2137;
-  padding: 12px 10px;
+/* 4. Bold — deep dark header + teal stripe + white body */
+.bold-template {
+  flex-direction: column;
+}
+
+.prev-bold-top {
+  background: #0a192f;
+  flex: 0 0 60%;
+  padding: 0 12px 8px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: flex-end;
+}
+
+.prev-bold-name {
+  font-family: "Inter", sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.prev-bold-title {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.38);
+  margin-top: 3px;
+}
+
+.prev-bold-stripe {
+  height: 3px;
+  background: linear-gradient(90deg, #64ffda 0%, rgba(100,255,218,0.1) 100%);
   flex-shrink: 0;
 }
 
-.prev-ms-content {
+.prev-bold-bottom {
+  background: #ffffff;
   flex: 1;
-  padding: 12px 12px;
+  padding: 7px 12px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
 }
 
-.prev-ms-content .prev-line {
-  background: var(--color-border-light);
+.prev-bold-section {
+  font-family: "Inter", sans-serif;
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0a192f;
+  border-left: 3px solid #0a192f;
+  padding-left: 6px;
 }
 
-/* 6. Corporate Classic — white card with dark text */
+/* 5. Corporate Classic — cream / paper serif */
 .corporate-classic {
-  background: #f8f8f6;
-}
-
-.corporate-classic .prev-cc-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 6px;
-}
-
-.corporate-classic .prev-cc-name {
-  display: flex;
-  flex-direction: column;
+  background: #f3f2ec;
+  padding: 14px;
+  justify-content: center;
   gap: 4px;
 }
 
-.corporate-classic .prev-cc-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-end;
+.prev-cc-label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 8px;
+  color: #aaa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.corporate-classic .prev-body {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.prev-cc-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
 }
 
-.corporate-classic .prev-divider.dark {
-  background: rgba(10,25,47,0.25);
+.prev-cc-rule {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  flex-shrink: 0;
+  margin: 2px 0;
+}
+
+.prev-cc-contact {
+  font-family: Georgia, serif;
+  font-size: 8.5px;
+  color: #888;
+  letter-spacing: 0.3px;
 }
 
 /* ---- Footer / Download button ---- */

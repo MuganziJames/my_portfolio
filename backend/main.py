@@ -76,7 +76,6 @@ TEMPLATES = {
     "bizarre_modern": "Bizarre & Modern",
     "minimal_professional": "Minimal Professional",
     "bold": "Bold",
-    "millennial_style": "Millennial Style",
     "corporate_classic": "Corporate Classic",
 }
 
