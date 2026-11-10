@@ -25,6 +25,14 @@
   min-height: 400px;
 }
 
+.lintech-project .project-image {
+  transform: translateY(-60px);
+}
+
+.lintech-project .project-image:hover {
+  transform: translateY(-65px);
+}
+
 /* Left Image Layout */
 .featured-project.left-image {
   grid-template-areas: "image content";
@@ -229,16 +237,20 @@
     background-repeat: no-repeat;
   }
 
+  .featured-project.right-image:nth-child(1) {
+    background-image: url("images/lintechautomobilegarage.png");
+  }
+
   /* Specific background images for each project */
-  .featured-project.left-image:nth-child(1) {
+  .featured-project.left-image:nth-child(2) {
     background-image: url("images/workeafricafrontend.png");
   }
 
-  .featured-project.right-image:nth-child(2) {
+  .featured-project.right-image:nth-child(3) {
     background-image: url("images/workeafricabackend.png");
   }
 
-  .featured-project.left-image:nth-child(3) {
+  .featured-project.left-image:nth-child(4) {
     background-image: url("images/greenpulseai.png");
   }
 
@@ -255,13 +267,13 @@
   }
 
   /* Make ClimateWise and Ajirawise backgrounds much more subtle */
-  .featured-project.left-image:nth-child(1)::before,
-  .featured-project.right-image:nth-child(2)::before {
+  .featured-project.left-image:nth-child(2)::before,
+  .featured-project.right-image:nth-child(3)::before {
     background: rgba(10, 25, 47, 0.92);
   }
 
   /* Keep Portfolio background more visible */
-  .featured-project.left-image:nth-child(3)::before {
+  .featured-project.left-image:nth-child(4)::before {
     background: rgba(10, 25, 47, 0.75);
   }
 
@@ -407,6 +419,26 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
   margin-bottom: 60px;
+}
+
+.other-projects-grid > .project-card {
+  order: 5;
+}
+
+.other-projects-grid > .project-climatewise {
+  order: 1;
+}
+
+.other-projects-grid > .project-mystylemag {
+  order: 2;
+}
+
+.other-projects-grid > .project-rider-tracker {
+  order: 3;
+}
+
+.other-projects-grid > .project-umoja {
+  order: 4;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {

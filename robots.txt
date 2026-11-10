@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://muganzijamesdev.com/sitemap.xml
+Sitemap: https://jamesdev.site/sitemap.xml
 
 # Block access to source files
 Disallow: /styles.css

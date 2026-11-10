@@ -18,7 +18,7 @@ of the DocumentService (cvpdfgenerator.py):
 JAMES_MUGANZI_CV = """James Muganzi
 Senior Full Stack Developer · AI Systems Engineer · Cloud & Automation Architect
 muganzijames.ai.dev@gmail.com | +254 798 848 862 | Nairobi, Kenya
-github.com/MuganziJames | muganzijamesdev.com
+github.com/MuganziJames | jamesdev.site
 
 PROFESSIONAL SUMMARY
 Highly driven Full Stack Software Engineer and AI Systems Specialist with proven experience building scalable digital platforms, intelligent automation systems, and machine learning-powered applications. Experienced in designing end-to-end architectures spanning modern frontend engineering, backend service design, predictive analytics pipelines, and cloud infrastructure deployment. Passionate about developing socially impactful technological solutions that improve accessibility, decision-making, and operational efficiency across emerging markets.

@@ -44,8 +44,8 @@ app = FastAPI(
 # CORS – update ALLOWED_ORIGINS to match your live domain(s)
 # ---------------------------------------------------------------------------
 ALLOWED_ORIGINS = [
-    "https://muganzijamesdev.com",
-    "https://www.muganzijamesdev.com",
+    "https://jamesdev.site",
+    "https://www.jamesdev.site",
     # Local development
     "http://localhost",
     "http://localhost:3000",
